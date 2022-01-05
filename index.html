@@ -30,6 +30,8 @@
         alt="Fred"
       />
     </div>
+    <div class="counter">Total number of visitors: <span class="website-counter"></span></div>
+    <!-- <div class="website-counter"></div> -->
     <script src="js/scripts.js"></script>
   </body>
   <script>
@@ -37,6 +39,21 @@
       var today = new Date().toLocaleString();
       document.getElementById("today").innerHTML = today;
     };
+
+    var counterContainer = document.querySelector(".website-counter");
+    var visitCount = localStorage.getItem("page_view");
+
+    // Check if page_view entry is present
+    if (visitCount) {
+      visitCount = Number(visitCount) + 1;
+      localStorage.setItem("page_view", visitCount);
+    } else {
+      visitCount = 1;
+      localStorage.setItem("page_view", 1);
+    }
+    counterContainer.innerHTML = visitCount;
+
+  
   </script>
   <style>
     * {
@@ -71,6 +88,11 @@
     .fred-img {
       max-width: 250px;
       margin-top: 1rem;
+    }
+    .counter {
+      font-size: 1rem;
+      color: grey;
+      margin-top: 2rem;
     }
   </style>
 </html>
