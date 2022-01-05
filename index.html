@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Check In Fred's Shop</title>
+    <meta name="Check In Fred's Shop" content="Check In Fred's Shop" />
+  </head>
+
+  <body>
+    <!-- your content here... -->
+    <div class="header"></div>
+    <img
+      class="check"
+      src="assets/iconmonstr-check-mark-4-240.png"
+      alt="check"
+    />
+    <h1>Fred's Shop</h1>
+    <div class="bg-grey checkin">
+      <h2>Checked In</h2>
+      <p id="today"></p>
+    </div>
+    <div class="fred">
+      <h3>Thank you for your visit!</h3>
+      <img
+        class="fred-img"
+        src="assets/Screenshot 2022-01-05 160714.jpg"
+        alt="Fred"
+      />
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+  <script>
+    window.onload = function () {
+      var today = new Date().toLocaleString();
+      document.getElementById("today").innerHTML = today;
+    };
+  </script>
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color: white;
+      opacity: 1;
+      background-image: radial-gradient(lightgrey 0.5px, white 0.5px);
+      background-size: 10px 10px;
+    }
+    .header {
+      height: 2rem;
+      background-color: #ff8c00;
+    }
+    .check {
+      max-width: 100px;
+      margin: 2rem 0 1rem 0;
+    }
+    .bg-grey {
+      background-color: lightgrey;
+    }
+    .checkin {
+      padding: 0.8rem;
+      margin: 1rem 0 2rem 0;
+    }
+
+    .fred-img {
+      max-width: 250px;
+      margin-top: 1rem;
+    }
+  </style>
+</html>
